@@ -4,7 +4,7 @@ $(function() {
     type: "GET"
   }).then(function(data) {
     var devouredElem = $("#devouredBurgers");
-    var nodevouredElem = $("#notdevouredBurgers");
+    var noDevouredElem = $("#notDevouredBurgers");
 
     var burgers = data.burgers;
     var len = burgers.length;
@@ -13,17 +13,17 @@ $(function() {
       var new_elem =
         "<li>" +
         burgers[i].id + 
-        ". "+burgers[i].burger_name +
+        ". "+burgers[i].name +
         "<button class='change-devoured' data-id='" +
         burgers[i].id +
-        "' data-newDevoured='" +
+        "' data-newdevoured='" +
         !burgers[i].devoured +
         "'>";
 
       if (burgers[i].devoured) {
-        new_elem += "SLEEP TIME!";
+        new_elem += "EAT TIME!";
       } else {
-        new_elem += "WAKE UP!";
+        new_elem += "MAKE ANOTHER!";
       }
 
       new_elem += "</button>";
@@ -36,14 +36,14 @@ $(function() {
       if (burgers[i].devoured) {
         devouredElem.append(new_elem);
       } else {
-        nodevouredElem.append(new_elem);
+        noDevouredElem.append(new_elem);
       }
     }
   });
 
   $(document).on("click", ".change-devoured", function(event) {
     var id = $(this).data("id");
-    var newDevoured = $(this).data("newDevoured")===true;
+    var newDevoured = $(this).data("newdevoured")===true;
 
     var newDevouredState = {
       devoured: newDevoured
@@ -54,7 +54,7 @@ $(function() {
       type: "PUT",
       data: JSON.stringify(newDevouredState),
       dataType:'json',
-      contentType: 'appliburgerion/json'
+      contentType: 'application/json'
     }).then(function() {
       console.log("changed devoured to", newDevoured);
       // Reload the page to get the updated list
@@ -66,8 +66,8 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newburger = {
-      burger_name: $("#ca")
+    var newBurger = {
+      name: $("#ca")
         .val()
         .trim(),
       devoured: $("[name=devoured]:checked")
@@ -78,7 +78,7 @@ $(function() {
     // Send the POST request.
     $.ajax("/burgers", {
       type: "POST",
-      data: JSON.stringify(newburger),
+      data: JSON.stringify(newBurger),
       dataType:'json',
       contentType: 'application/json'
     }).then(function() {

@@ -10,17 +10,17 @@ router.get("/", function(req, res) {
 });
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/burger", function(req, res) {
+router.get("/burgers", function(req, res) {
   burger.all(function(data) {
-    res.json({ burger: data });
+    res.json({ burgers: data });
   });
 });
 
 router.post("/burgers", function(req, res) {
   burger.create([
-    "burger_name", "devoured"
+    "name", "devoured"
   ], [
-    req.body.burger_name, req.body.devoured
+    req.body.name, req.body.devoured
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
