@@ -21,9 +21,9 @@ $(function() {
         "'>";
 
       if (burgers[i].devoured) {
-        new_elem += "EAT TIME!";
+        new_elem += "MAKE A NEW ONE!";
       } else {
-        new_elem += "MAKE ANOTHER!";
+        new_elem += "DEVOUR!";
       }
 
       new_elem += "</button>";
