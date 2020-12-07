@@ -13,7 +13,7 @@ $(function() {
       var new_elem =
         "<li>" +
         burgers[i].id + 
-        ". "+burgers[i].name +
+        ". "+burgers[i].burger_name +
         "<button class='change-devoured' data-id='" +
         burgers[i].id +
         "' data-newDevoured='" +
@@ -56,7 +56,7 @@ $(function() {
       dataType:'json',
       contentType: 'appliburgerion/json'
     }).then(function() {
-      console.log("changed sleep to", newDevoured);
+      console.log("changed devoured to", newDevoured);
       // Reload the page to get the updated list
       location.reload();
     });
@@ -67,7 +67,7 @@ $(function() {
     event.preventDefault();
 
     var newburger = {
-      name: $("#ca")
+      burger_name: $("#ca")
         .val()
         .trim(),
       devoured: $("[name=devoured]:checked")
