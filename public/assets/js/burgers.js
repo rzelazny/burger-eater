@@ -16,7 +16,7 @@ $(function() {
         ". "+burgers[i].name
 
       if (!burgers[i].devoured) {
-        new_elem += "<button class='change-devoured' data-id='" +
+        new_elem += " <button class='change-devoured' data-id='" +
         burgers[i].id +
         "' data-newdevoured='" +
         !burgers[i].devoured +
