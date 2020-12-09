@@ -1,3 +1,18 @@
+body{
+  background-image: url("../images/burger_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1{
+  text-align: center;
+  color: white;
+}
+
+h2{
+  color: white;
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -8,7 +23,7 @@ li {
   font-weight: bold;
 }
 
-.create-update-form {
+.create-form {
   padding: 5px;
   margin: 5px;
   background: aqua;
