@@ -10,8 +10,15 @@ $(function() {
     var len = burgers.length;
 
     for (var i = 0; i < len; i++) {
-      var new_elem =
-        "<li>" +
+      var new_elem = "<li" 
+        //set class for css stlying
+        if (burgers[i].devoured) {
+          new_elem +=" class = 'devoured'>"
+        } else {
+          new_elem +=">"
+        }
+
+        new_elem +=
         burgers[i].id + 
         ". "+burgers[i].name
 
