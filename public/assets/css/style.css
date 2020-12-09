@@ -4,13 +4,16 @@ body{
   background-repeat: no-repeat;
 }
 
-h1{
-  text-align: center;
+h1, 
+h2{
+  font-family: 'Sigmar One', cursive;
   color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
-h2{
-  color: white;
+h1{
+  text-align: center;
 }
 
 li {
