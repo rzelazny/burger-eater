@@ -13,25 +13,16 @@ $(function() {
       var new_elem =
         "<li>" +
         burgers[i].id + 
-        ". "+burgers[i].name +
-        "<button class='change-devoured' data-id='" +
+        ". "+burgers[i].name
+
+      if (!burgers[i].devoured) {
+        new_elem += "<button class='change-devoured' data-id='" +
         burgers[i].id +
         "' data-newdevoured='" +
         !burgers[i].devoured +
-        "'>";
-
-      if (burgers[i].devoured) {
-        new_elem += "MAKE A NEW ONE!";
-      } else {
-        new_elem += "DEVOUR!";
-      }
-
-      new_elem += "</button>";
-
-      new_elem +=
-        "<button class='delete-burger' data-id='" +
-        burgers[i].id +
-        "'>DELETE!</button></li>";
+        "'>DEVOUR!</button>";
+      } 
+      new_elem += "</li>";
 
       if (burgers[i].devoured) {
         devouredElem.append(new_elem);
