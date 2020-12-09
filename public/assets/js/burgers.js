@@ -2,7 +2,7 @@
 $(function() {
   $.ajax("/burgers", {
     type: "GET"
-  }).then(function(data) {
+  }).then(function(data) { //add our burgers
     var devouredElem = $("#devouredBurgers");
     var noDevouredElem = $("#notDevouredBurgers");
 
@@ -10,10 +10,10 @@ $(function() {
     var len = burgers.length;
 
     for (var i = 0; i < len; i++) {
-      var new_elem = "<li" 
-        //set class for css stlying
+      var new_elem = "<li"  //each burger is a new <li> item
+        
         if (burgers[i].devoured) {
-          new_elem +=" class = 'devoured'>"
+          new_elem +=" class = 'devoured'>" //set class for css styling on devoured burgers
         } else {
           new_elem +=">"
         }
@@ -31,6 +31,7 @@ $(function() {
       } 
       new_elem += "</li>";
 
+      //Eaten and uneaten burgers get appended to different areas
       if (burgers[i].devoured) {
         devouredElem.append(new_elem);
       } else {
@@ -39,6 +40,7 @@ $(function() {
     }
   });
 
+  //Clicking the devour button moves the burger to the devoured table
   $(document).on("click", ".change-devoured", function(event) {
     var id = $(this).data("id");
     var newDevoured = $(this).data("newdevoured")===true;
@@ -65,7 +67,7 @@ $(function() {
     event.preventDefault();
 
     var newBurger = {
-      name: $("#ca")
+      name: $("#burger")
         .val()
         .trim(),
       devoured: false
