@@ -1,7 +1,6 @@
 body{
   background-image: url("../images/burger_background.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 h1, 
@@ -29,7 +28,7 @@ li {
 .create-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  background: #faebd7;
 }
 
 .form-group {
