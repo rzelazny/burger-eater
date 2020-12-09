@@ -1,6 +1,7 @@
 body{
   background-image: url("../images/burger_background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1, 
@@ -19,8 +20,19 @@ li {
   padding: 5px;
   margin: 5px;
   background: #faebd7;
+  list-style: none; /* Remove default bullets */
 }
 
+li::before {
+  content: "\2022";
+  color: white;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: inline-block; 
+  width: 2em;
+  margin-left: -1.5em; 
+}
 .label {
   font-weight: bold;
 }
@@ -33,4 +45,9 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.devoured{
+  color: rgb(95, 95, 95);
+  background: lightgray;
 }
